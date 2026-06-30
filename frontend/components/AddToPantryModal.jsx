@@ -95,8 +95,8 @@ export default function AddToPantryModal({ isOpen, onClose, onSuccess }) {
   useEffect(() => {
     if (saveData?.success) {
       toast.success(saveData.message);
-      handleClose();
       if (onSuccess) onSuccess();
+      handleClose();
     }
   }, [saveData]);
 
@@ -119,8 +119,8 @@ export default function AddToPantryModal({ isOpen, onClose, onSuccess }) {
     if (addData?.success) {
       toast.success("Item added to pantry!");
       setManualItem({ name: "", quantity: "" });
-      handleClose();
       if (onSuccess) onSuccess();
+      handleClose();
     }
   }, [addData]);
 

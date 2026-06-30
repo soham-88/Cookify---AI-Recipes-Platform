@@ -110,12 +110,13 @@ const PantryPage = () => {
 
                         <Button 
                             onClick={() => setIsModalOpen(true)}
-                            className="hidden md:flex " 
+                            className="flex " 
                             size="lg" 
                             variant="primary"
                         >
                             <Plus className="w-5 h-5" />
-                            Add to Pantry
+                            <span className="hidden sm:inline">Add to Pantry</span>
+                            <span className="sm:hidden">Add</span>
                         </Button>      
                     </div>
 

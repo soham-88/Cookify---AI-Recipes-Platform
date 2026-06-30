@@ -7,24 +7,92 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { RingLoader } from "react-spinners";
 
+// Compress image before upload — fixes Vercel body size limit on mobile
+function compressImage(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (event) => {
+      const img = new window.Image();
+      img.src = event.target.result;
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        let width = img.width;
+        let height = img.height;
+        const MAX_DIMENSION = 1280;
+
+        if (width > height && width > MAX_DIMENSION) {
+          height *= MAX_DIMENSION / width;
+          width = MAX_DIMENSION;
+        } else if (height > MAX_DIMENSION) {
+          width *= MAX_DIMENSION / height;
+          height = MAX_DIMENSION;
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, width, height);
+
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) {
+              reject(new Error("Compression failed"));
+              return;
+            }
+            const compressedFile = new File([blob], file.name, {
+              type: "image/jpeg",
+              lastModified: Date.now(),
+            });
+            resolve(compressedFile);
+          },
+          "image/jpeg",
+          0.7 // 70% quality — keeps file small but still clear
+        );
+      };
+      img.onerror = () => reject(new Error("Failed to load image"));
+    };
+    reader.onerror = () => reject(new Error("Failed to read file"));
+  });
+}
+
 export default function ImageUploader({ onImageSelect, loading }) {
   const [preview, setPreview] = useState(null);
+  const [compressing, setCompressing] = useState(false);
   const fileInputRef = useRef(null);
 
   const onDrop = useCallback(
-    (acceptedFiles) => {
+    async (acceptedFiles) => {
       const file = acceptedFiles[0];
       if (!file) return;
 
-      // Create preview
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
+      try {
+        setCompressing(true);
 
-      // Pass file to parent
-      onImageSelect(file);
+        // Compress the image first (fixes mobile body size limit issue)
+        const compressedFile = await compressImage(file);
+
+        // Create preview from compressed file
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setPreview(reader.result);
+        };
+        reader.readAsDataURL(compressedFile);
+
+        // Pass compressed file to parent
+        onImageSelect(compressedFile);
+      } catch (error) {
+        console.error("Image compression failed:", error);
+        // Fallback: use original file if compression fails
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setPreview(reader.result);
+        };
+        reader.readAsDataURL(file);
+        onImageSelect(file);
+      } finally {
+        setCompressing(false);
+      }
     },
     [onImageSelect]
   );
@@ -35,7 +103,7 @@ export default function ImageUploader({ onImageSelect, loading }) {
       "image/*": [".jpeg", ".jpg", ".png", ".webp"],
     },
     maxFiles: 1,
-    maxSize: 10485760, // 10MB
+    maxSize: 10485760, // 10MB original — gets compressed down after
     noClick: true,
     noKeyboard: true,
   });
@@ -54,6 +122,16 @@ export default function ImageUploader({ onImageSelect, loading }) {
       fileInputRef.current.value = "";
     }
   };
+
+  // Compressing Mode
+  if (compressing) {
+    return (
+      <div className="relative w-full aspect-video bg-stone-100 rounded-2xl overflow-hidden border-2 border-stone-200 flex flex-col items-center justify-center gap-3">
+        <RingLoader color="#ea580c" />
+        <p className="text-stone-600 text-sm">Optimizing image...</p>
+      </div>
+    );
+  }
 
   // Preview Mode
   if (preview) {

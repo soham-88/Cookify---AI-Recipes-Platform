@@ -1,5 +1,3 @@
-<img width="944" height="796" alt="image" src="https://github.com/user-attachments/assets/4f16781f-1ee1-426e-b9ca-f4ab70f73dc1" /><div align="center">
-
 # 🍳 Cookify — AI Recipe Platform
 
 ### Your Smart Kitchen — Cook Smarter, Waste Less, Eat Better

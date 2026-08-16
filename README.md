@@ -244,7 +244,7 @@ Visit `http://localhost:3000` 🎉
 **Soham Pawar**
 
 - GitHub: [@soham-88](https://github.com/soham-88)
-- LinkedIn: _Add your link_
+- LinkedIn: linkedin.com/in/soham-pawar-984b32319 
 
 ---
 

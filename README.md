@@ -1,3 +1,5 @@
+<div align="center">
+
 # 🍳 Cookify — AI Recipe Platform
 
 ### Your Smart Kitchen — Cook Smarter, Waste Less, Eat Better
@@ -234,7 +236,7 @@ Visit `http://localhost:3000` 🎉
 **Soham Pawar**
 
 - GitHub: [@soham-88](https://github.com/soham-88)
-- LinkedIn: https://www.linkedin.com/in/soham-pawar-984b32319/
+- LinkedIn: _Add your link_
 
 ---
 

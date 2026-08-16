@@ -195,24 +195,6 @@ Visit `http://localhost:3000` 🎉
 
 ---
 
-## 📸 Screenshots
-
-| Landing Page | Dashboard | Pantry Scan |
-|:---:|:---:|:---:|
-|<img width="1420" height="844" alt="image" src="https://github.com/user-attachments/assets/f2107794-10e4-452b-b60d-f5d09283860b" />
-|<img width="1881" height="848" alt="image" src="https://github.com/user-attachments/assets/257e2d1a-59dc-4d4c-879e-61f7e3a60f2c" />
-|<img width="479" height="679" alt="image" src="https://github.com/user-attachments/assets/06f4c26a-dc25-4db9-9bc4-c26f9da4bcbe" />
-|
-
-| Recipe Suggestions | Full Recipe View | Pricing |
-|:---:|:---:|:---:|
-|<img width="1455" height="787" alt="image" src="https://github.com/user-attachments/assets/d7802c36-c953-461b-9e47-329826d6a511" />
-|<img width="944" height="796" alt="image" src="https://github.com/user-attachments/assets/1708b1f5-7fdc-46e7-89f6-8cbe55f74edb" />
-|<img width="1150" height="660" alt="image" src="https://github.com/user-attachments/assets/8e0857fa-3bc9-49da-bee8-ee3cf25edc69" />
-|
-
----
-
 ## 💳 Plans
 
 | Feature | Free | Pro |

@@ -1,4 +1,4 @@
-<div align="center">
+<img width="944" height="796" alt="image" src="https://github.com/user-attachments/assets/4f16781f-1ee1-426e-b9ca-f4ab70f73dc1" /><div align="center">
 
 # 🍳 Cookify — AI Recipe Platform
 
@@ -12,6 +12,8 @@
 [![Clerk](https://img.shields.io/badge/Clerk-Auth-6C47FF?style=flat-square)](https://clerk.com/)
 [![Arcjet](https://img.shields.io/badge/Arcjet-Security-FF5733?style=flat-square)](https://arcjet.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+> ⚠️ **Note:** This is a free-tier deployment. If you encounter any error while using the app, please **reload the page** — it usually resolves the issue instantly (often caused by cold starts on free hosting tiers).
 
 [Live Demo](https://cookify-ai-recipes-platform.vercel.app/) · [Report Bug](https://github.com/soham-88/Cookify---AI-Recipes-Platform/issues) · [Request Feature](https://github.com/soham-88/Cookify---AI-Recipes-Platform/issues)
 
@@ -28,6 +30,8 @@ Snap a photo of your pantry or fridge, and Cookify's AI instantly identifies you
 This isn't just a wrapper around a chatbot. Cookify is a production-ready application with real authentication, a persistent database, bot protection, rate limiting, and a freemium subscription model — built to demonstrate real-world full-stack engineering.
 
 ---
+
+> 📱 **Best Experience:** For the full experience — especially the **AI Pantry Scan with camera** — open Cookify on your **smartphone/mobile browser**. Desktop works too, but mobile lets you use the live camera to scan ingredients directly.
 
 ## ✨ Features
 
@@ -195,11 +199,17 @@ Visit `http://localhost:3000` 🎉
 
 | Landing Page | Dashboard | Pantry Scan |
 |:---:|:---:|:---:|
-| _Add screenshot_ | _Add screenshot_ | _Add screenshot_ |
+|<img width="1420" height="844" alt="image" src="https://github.com/user-attachments/assets/f2107794-10e4-452b-b60d-f5d09283860b" />
+|<img width="1881" height="848" alt="image" src="https://github.com/user-attachments/assets/257e2d1a-59dc-4d4c-879e-61f7e3a60f2c" />
+|<img width="479" height="679" alt="image" src="https://github.com/user-attachments/assets/06f4c26a-dc25-4db9-9bc4-c26f9da4bcbe" />
+|
 
 | Recipe Suggestions | Full Recipe View | Pricing |
 |:---:|:---:|:---:|
-| _Add screenshot_ | _Add screenshot_ | _Add screenshot_ |
+|<img width="1455" height="787" alt="image" src="https://github.com/user-attachments/assets/d7802c36-c953-461b-9e47-329826d6a511" />
+|<img width="944" height="796" alt="image" src="https://github.com/user-attachments/assets/1708b1f5-7fdc-46e7-89f6-8cbe55f74edb" />
+|<img width="1150" height="660" alt="image" src="https://github.com/user-attachments/assets/8e0857fa-3bc9-49da-bee8-ee3cf25edc69" />
+|
 
 ---
 
